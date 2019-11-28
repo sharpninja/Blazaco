@@ -1,6 +1,7 @@
 ﻿@page "/fullscreen"
+@using System.Threading
 
-<MonacoEditor @ref="_editor" Model="_editorModel" FullScreen="true" />
+<MonacoEditor class="fullscreen-editor" ref="_editor" Model="@_editorModel" />
 
 @functions
 {
@@ -21,5 +22,6 @@
         };
 
         _editorModel = new EditorModel(options);
+        await base.OnInitAsync();
     }
 }
