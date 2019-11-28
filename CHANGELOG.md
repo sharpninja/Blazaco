@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.0
+* Merged danielabbatt work on "Updated to work with Blazor 3.0.0 release."
+
 ## 1.2.0
 * Updated Blazaco, Samples, and Docs to Blazor version 3.0.100-preview5-011568
 
