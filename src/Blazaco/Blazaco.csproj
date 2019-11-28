@@ -9,13 +9,13 @@
     <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <TypeScriptToolsVersion>3.2</TypeScriptToolsVersion>
-    <Authors>Kyle Undefined</Authors>
+    <Authors>Kyle Undefined, Raffael Zica</Authors>
     <Description>A Blazor Component utilizing the Monaco editor by Microsoft</Description>
     <RepositoryType>git</RepositoryType>
     <Copyright>Copyright 2019 (c) Kyle Undefined. All rights reserved.</Copyright>
-    <RepositoryUrl>https://github.com/Kyle-Undefined/Blazaco</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/Kyle-Undefined/Blazaco/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://kyle-undefined.github.io/Blazaco/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SirJson/Blazaco</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/SirJson/Blazaco/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/SirJson/Blazaco/</PackageProjectUrl>
 	<PackageTags>Blazor;Blazor-Components;Monaco</PackageTags>
 	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 	<PackageReleaseNotes>See the change log for release notes

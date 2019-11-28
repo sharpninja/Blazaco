@@ -1,20 +1,29 @@
 # Change Log
 
 ## 1.3.0
-* Merged danielabbatt work on "Updated to work with Blazor 3.0.0 release."
+
+- Merged work done by k0dep: "Replacement of fixed sizes for css class"
+
+## 1.3.0
+
+- Merged work done by danielabbatt: "Updated to work with Blazor 3.0.0 release."
 
 ## 1.2.0
-* Updated Blazaco, Samples, and Docs to Blazor version 3.0.100-preview5-011568
+
+- Updated Blazaco, Samples, and Docs to Blazor version 3.0.100-preview5-011568
 
 ## 1.1.0
-* Updated Blazaco, Samples, and Docs to Blazor version 0.8.0-preview-19104-04
-* Changed the JS Interop naming
+
+- Updated Blazaco, Samples, and Docs to Blazor version 0.8.0-preview-19104-04
+- Changed the JS Interop naming
 
 ## 1.0.1
-* Changed /test/ to /samples/ for better naming scheme, since /test/ was not Tests
-* Updated README link for /monaco-editor/, Interop section, and removed the highlight.js/css links
-* Updated /monaco-editor/ version to 0.15.6
-* Updated /docs/ and /samples/ to use the new version of Monaco Editor, plus took out the unneeded folders/files so only what's needed is there
+
+- Changed /test/ to /samples/ for better naming scheme, since /test/ was not Tests
+- Updated README link for /monaco-editor/, Interop section, and removed the highlight.js/css links
+- Updated /monaco-editor/ version to 0.15.6
+- Updated /docs/ and /samples/ to use the new version of Monaco Editor, plus took out the unneeded folders/files so only what's needed is there
 
 ## 1.0.0
-* Initial release
+
+- Initial release
