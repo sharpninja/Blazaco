@@ -1,7 +1,7 @@
 ﻿@page "/fullscreen"
 @using System.Threading
 
-<MonacoEditor @class="fullscreen-editor" @ref="_editor" @Model="_editorModel" />
+<MonacoEditor class="fullscreen-editor" @ref="_editor" Model="_editorModel" />
 
 @functions
 {
@@ -12,13 +12,12 @@
     {
         var options = new EditorOptions()
         {
-            Value = @"// Your code here!
-// I'm set to `csharp` lang, and `vs-dark` theme through EditorOptions
-// Also, the ContextMenu is disabled, and the size of the editor flows with browser",
-            Language = "csharp",
+            Value = @"{ name: 1, value: 'one' }",
+            Language = "json",
             Theme = "vs-dark",
             AutomaticLayout = true,
-            Contextmenu = false
+            Contextmenu = true,
+            ReadOnly = true
         };
 
         _editorModel = new EditorModel(options);

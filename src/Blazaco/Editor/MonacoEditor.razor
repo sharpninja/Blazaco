@@ -1,9 +1,20 @@
 ﻿@using Microsoft.AspNetCore.Components
 @using Microsoft.JSInterop
+@using Microsoft.Extensions.Logging;
+@using Microsoft.Extensions.Logging.Abstractions;
 
 <div class=@(@class) id="@Model.Id"></div>
 
 @functions {
+    [Parameter]
+    public MonacoEditor Ref
+    {
+        get => this._ref;
+        set => _ref = value;
+    }
+
+    [Inject]
+    public Microsoft.Extensions.Logging.ILogger<MonacoEditor> Logger { get; set; }
 
     [Inject]
     IJSRuntime runtime { get; set; }
@@ -14,14 +25,44 @@
     [Parameter]
     public string @class { get; set; }
 
+    [Parameter]
+    public double Height
+    {
+        get => Model.LayoutInfo.Height;
+        set
+        {
+            Model.LayoutInfo.Height = value;
+        }
+    }
+
+    [Parameter]
+    public double Width
+    {
+        get => Model.LayoutInfo.Width;
+        set
+        {
+            Model.LayoutInfo.Width = value;
+        }
+    }
+
     private bool _alreadyRendered = false;
+    private MonacoEditor _ref;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!_alreadyRendered)
         {
-            _alreadyRendered = await BlazacoJSInterop.InitializeEditor(runtime, Model);
+            try
+            {
+                _alreadyRendered = await BlazacoJSInterop.InitializeEditor(runtime, Model);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Error initializing MonacoEditor JavaScript.", ex);
+            }
         }
+
+        await Layout();
     }
 
     public async Task<string> GetValue()
@@ -41,6 +82,14 @@
 
     public async Task<bool> Layout()
     {
-        return await BlazacoJSInterop.Layout(runtime, Model.Id);
+        try
+        {
+            return await BlazacoJSInterop.Layout(runtime, Model.Id, Model.LayoutInfo);
+        }
+        catch(Exception ex)
+        {
+            Logger.LogError("Error in JavaScript calling Layout.", ex);
+            return false;
+        }
     }
 }
